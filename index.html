@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="SK Internship Board - Discover internship opportunities and build your future."
+    >
+    <title>SK Internship Board</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- == HEADER == -->
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="brand-area">
+                <h1>
+                    <span class="brand-sk">SK</span>
+                    <span class="brand-title">Internship Board</span>
+                </h1>
+                <p>
+                    Discover opportunities. Build your future.
+                </p>
+            </div>
+            <!-- Theme Button -->
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Switch to dark mode"
+                title="Switch to dark mode"
+            >
+                🌙
+            </button>
+        </div>
+    </header>
+    <!-- == MAIN == -->
+    <main class="container">
+        <!-- Search Section -->
+        <section
+            class="search-section"
+            aria-labelledby="search-heading"
+        >
+            <div class="section-label">
+                EXPLORE OPPORTUNITIES
+            </div>
+            <h2 id="search-heading">
+                Find Internships
+            </h2>
+            <div class="controls">
+                <!-- Search -->
+                <div class="form-group">
+                    <label for="searchInput">
+                        Search internships
+                    </label>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search by title, skill, location..."
+                    >
+                    <small>
+                        Search by internship title, skill, domain, mode or location.
+                    </small>
+                </div>
+                <!-- Domain -->
+                <div class="form-group">
+                    <label for="domainFilter">
+                        Filter by domain
+                    </label>
+                    <select id="domainFilter">
+                        <option value="all">
+                            All Domains
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <!-- Status Message -->
+        <div
+            id="statusMessage"
+            class="status-message"
+            role="status"
+            aria-live="polite"
+        ></div>
+        <!-- Internship Section -->
+        <section
+            class="internship-section"
+            aria-labelledby="internship-heading"
+        >
+            <div class="section-heading">
+                <div>
+                    <div class="section-label">
+                        LATEST OPPORTUNITIES
+                    </div>
+                    <h2 id="internship-heading">
+                        Available Internships
+                    </h2>
+                </div>
+                <span
+                    id="resultCount"
+                    aria-live="polite"
+                ></span>
+            </div>
+            <!-- Cards will appear here -->
+            <div
+                id="internshipList"
+                class="internship-grid"
+            ></div>
+        </section>
+    </main>
+    <!-- == DETAILS MODAL == -->
+    <div
+        id="detailsModal"
+        class="modal-overlay"
+        aria-hidden="true"
+    >
+        <div
+            class="details-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalTitle"
+        >
+            <!-- Close -->
+            <button
+                id="closeModal"
+                class="modal-close"
+                type="button"
+                aria-label="Close internship details"
+            >
+                &times;
+            </button>
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <span
+                    id="modalDomain"
+                    class="modal-domain"
+                ></span>
+                <h2 id="modalTitle">
+                    Internship Details
+                </h2>
+                <p>
+                    Internship opportunity details.
+                </p>
+            </div>
+            <!-- Modal Information -->
+            <div class="modal-info-grid">
+                <div class="modal-info-box">
+                    <span class="modal-icon">
+                        🌐
+                    </span>
+                    <div>
+                        <small>Mode</small>
+                        <strong id="modalMode"></strong>
+                    </div>
+                </div>
+                <div class="modal-info-box">
+                    <span class="modal-icon">
+                        📍
+                    </span>
+                    <div>
+                        <small>Location</small>
+                        <strong id="modalLocation"></strong>
+                    </div>
+                </div>
+                <div class="modal-info-box">
+                    <span class="modal-icon">
+                        👥
+                    </span>
+                    <div>
+                        <small>Openings</small>
+                        <strong id="modalOpenings"></strong>
+                    </div>
+                </div>
+                <div class="modal-info-box">
+                    <span class="modal-icon">
+                        🆔
+                    </span>
+                    <div>
+                        <small>Internship ID</small>
+                        <strong id="modalId"></strong>
+                    </div>
+                </div>
+            </div>
+            <!-- Skills -->
+            <div class="modal-skills-section">
+                <h3>
+                    Required Skills
+                </h3>
+                <div
+                    id="modalSkills"
+                    class="modal-skills"
+                ></div>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button
+                    id="modalCloseButton"
+                    class="secondary-btn"
+                    type="button"
+                >
+                    Close Details
+                </button>
+                <button
+                    id="applyButton"
+                    class="apply-main-btn"
+                    type="button"
+                >
+                    Apply Now →
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- == FOOTER == -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                © 2026 SK Internship Board.
+                Built with HTML, CSS & JavaScript.
+            </p
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
